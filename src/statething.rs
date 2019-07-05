@@ -26,6 +26,10 @@ impl WasmTransition {
         let import_object = imports! {};
         let instance = instantiate(WASM_TRANSITON, &import_object)?;
 
+        for export in instance.exports() {
+            dbg!(export);
+        }
+
         // make sure transition is exported
         let _check_transition: Func<u32, u32> = instance.func("transition")?;
 

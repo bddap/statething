@@ -13,4 +13,5 @@ pub fn select_runtime() -> Result<Box<dyn Transition>, FailedToLoadWasm> {
     })
 }
 
+#[derive(Debug)]
 pub struct FailedToLoadWasm;
